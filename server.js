@@ -10,6 +10,7 @@ app.use(cors());
 
 let blogData = [];
 
+// Load the blog data from the JSON file
 const loadBlogData = () => {
   try {
     const data = fs.readFileSync(
@@ -22,6 +23,7 @@ const loadBlogData = () => {
   }
 };
 
+// Initial load of blog data
 loadBlogData();
 
 app.get("/api/posts", (req, res) => {
